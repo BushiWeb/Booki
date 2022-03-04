@@ -1,0 +1,562 @@
+/*
+*************************************************
+    Custom properties
+*************************************************
+*/
+/* Taille des marges latérales */
+body {
+    --side-margin: 3.472vw;
+}
+
+
+
+
+
+/*
+*************************************************
+    Règles générales
+*************************************************
+*/
+/* Polices par défauts du document */
+body {
+    /* Custom properties */
+    --body-font-size: max(16px, 1.111vw); /* Taille de police par défaut. Si 1.111vw < 16px alors on garde 16px pour garder un texte suffisement grand. */
+    /* Propriétés */
+    font-size: var(--body-font-size);
+}
+
+h2 {
+    font-size: calc(var(--body-font-size) * 1.4); /* Variation de la taille de police de base */
+    margin-bottom: 1.944vw;
+}
+
+
+
+
+
+/*
+*************************************************
+    Header
+*************************************************
+*/
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 var(--side-margin);
+    margin-bottom: 0.833vw;
+}
+
+
+/* Logo Booki */
+header > a {
+    margin-left: 1.389vw;
+}
+
+header > a img {
+    height: 3.125vw;
+    width: auto;
+}
+
+
+/* Barre de navigation */
+header nav ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+header nav li {
+    padding: 3.333vw;
+    flex: 1 1;
+    border-top: solid 3px transparent;
+}
+
+
+
+
+
+/*
+*************************************************
+    Form
+*************************************************
+*/
+form {
+    padding: 0 var(--side-margin);
+    margin-bottom: 2.778vw;
+}
+
+
+/* Titre du formulaire */
+form h2 {
+    margin-bottom: 0.833vw;
+}
+
+
+/* Description */
+form > p:first-of-type {
+    margin-bottom: 1.111vw;
+}
+
+
+/* Champ de recherche */
+#search {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 29.167vw;
+    margin-bottom: 2.222vw;
+    border-radius: 1.667vw;
+    /* Custom properties */
+    --search-border-radius: 0.868vw; /* Border radius commun aux éléments de la barre de recherche */
+    --search-height: 3.333vw; /* Hauteur communne aux éléments de la barre de recherche */
+    --search-padding: 1.111vw; /* Rembourage commun aux éléments de la barre de recherche */
+}
+
+/* Champ de recherche: label */
+#search label {
+    width: 3.542vw;
+    flex: 0 0 auto;
+    border-radius: var(--search-border-radius) 0 0 var(--search-border-radius);
+    line-height: var(--search-height); /* Même valeur que la hauteur pour centrer notre texte verticalement */
+}
+
+/* Champ de recherche: champ de saisie */
+#search input {
+    flex: 1 1;
+    padding: 0 var(--search-padding);
+}
+
+/* Champ de recherche: bouton */
+#search button {
+    flex-shrink: 0;
+    border-radius: 0 var(--search-border-radius) var(--search-border-radius) 0;
+    padding: 0 var(--search-padding);
+    line-height: var(--search-height); /* Même valeur que la hauteur pour centrer notre texte verticalement */
+}
+/* Champ de recherche: icône de recherche: caché au format desktop */
+#search button .icon {
+    display: none; /* L'icône est caché au format desktop */
+}
+
+/* Champ de recherche: hauteur */
+#search, #search label, #search input, #search button {
+    height: var(--search-height);
+}
+
+
+/* Filtres */
+#filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 2.222vw;
+    gap: 1.111vw 2.222vw;
+    /* Custom properties */
+    --filter-height: 3.472vw; /* Hauteur des éléments du filtre */
+    --filter-border-radius: calc(var(--filter-height)/2); /* Taille des arrondis de coin, la moitié de la hauteur */
+}
+
+/* Filtres: titres */
+#filters h3 {
+    font-size: calc(var(--body-font-size) * 1.125);  /* Variation de la taille de police de base */
+}
+
+/* Filtres: liste de filtres */
+#filters ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1.111vw 1.667vw;
+}
+
+/* Filtres: boutons */
+#filters button {
+    display: flex;
+    padding-right: 1.111vw;
+    line-height: var(--filter-height); /* Même valeur que la hauteur pour centrer notre texte verticalement */
+    gap: 1.111vw;
+    border-radius: var(--filter-border-radius);
+    border-width: max(2px, 0.139vw); /* La largeur de la bordure ne sera pas en dessous de 2px */
+}
+
+/* Filtres: icône du bouton */
+#filters button .icon {
+    flex-shrink: 0;
+    width: var(--filter-height); /* L'icône est un cercle parfait */
+}
+
+/* Filtres: hauteur des boutons */
+#filters button, #filters button .icon {
+    height: var(--filter-height);
+    line-height: var(--filter-height); /* Même valeur que la hauteur pour centrer notre texte verticalement */
+}
+
+
+/* Paragraphe d'information */
+#search-info {
+    display: flex;
+    justify-content: flex-start;
+    gap: 0.833vw;
+    /* Custom properties */
+    --search-info-height: 1.667vw; /* Taille de l'icône d'information */
+}
+
+/* Paragraphe d'information: icône */
+#search-info .icon {
+    flex-shrink: 0;
+    width: var(--search-info-height); /* L'icône est un cercle parfait */
+    height: var(--search-info-height);
+    line-height: var(--search-info-height); /* Même valeur que la hauteur pour centrer notre texte verticalement */
+    font-size: calc(var(--body-font-size) * 0.75);  /* Variation de la taille de police de base */
+}
+
+
+
+
+
+/*
+*************************************************
+    Main
+*************************************************
+*/
+main {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    align-content: flex-start;
+    padding: 0 var(--side-margin);
+    row-gap: 4.444vw;
+    gap: 4.444vw 4%;
+    margin-bottom: 3.056vw;
+    flex-flow: row-reverse wrap;
+}
+
+
+/* Taille des enfants */
+#most-popular {
+    flex-grow: 1;
+}
+
+#accomodations {
+    flex-grow: 2;
+}
+
+#activities {
+    width: 100%;
+}
+
+
+/* Styles communs des enfants */
+#most-popular, #accomodations {
+    background-color: var(--light-neutral);
+    border-radius: 2.5vw;
+    padding: 3.056vw 2.5vw 2.222vw 2.5vw;
+    width: 10%;
+}
+
+
+
+
+
+/*
+*************************************************
+    Les plus populaires
+*************************************************
+*/
+#most-popular {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+
+
+/* Titre */
+#most-popular h2 {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/* Liste de cartes */
+#most-popular > ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-grow: 1;
+    row-gap: 2.222vw;
+}
+
+
+
+
+
+
+/*
+*************************************************
+    Hébergements à Marseille
+*************************************************
+*/
+#accomodations {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+
+
+/* Liste de cartes */
+#accomodations > ul {
+    display: flex;
+    align-items: stretch;
+    align-content: flex-start;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    row-gap: 1.944vw;
+    margin-bottom: 3.056vw;
+}
+
+
+/* Afficher plus */
+#accomodations .more {
+    font-size: calc(var(--body-font-size) * 1.2);  /* Variation de la taille de police de base */
+}
+
+
+
+
+
+/*
+*************************************************
+    Activités à Marseille
+*************************************************
+*/
+#activities {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+
+
+/* Titre */
+#activities h2 {
+    margin-bottom: 1.667vw;
+}
+
+
+/* Liste de cartes */
+#activities > ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    align-content: space-between;
+    flex-direction: column;
+    flex-wrap: wrap;
+    min-height: 0;
+    aspect-ratio: 3/1;
+}
+
+
+
+
+
+/*
+*************************************************
+    Footer
+*************************************************
+*/
+footer {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+    padding: var(--side-margin);
+    padding-top: 3.056vw;
+    padding-bottom: 0.556vw;
+}
+
+
+/* Catégorie de lien */
+footer div {
+    width: 33.33%;
+    margin-bottom: 3.333vw;
+}
+
+/* Titre des catégories */
+footer h2 {
+    font-size: calc(var(--body-font-size) * 1.2);  /* Variation de la taille de police de base */
+    margin-bottom: 1.667vw;
+}
+
+
+
+
+
+/*
+*************************************************
+    Cartes
+*************************************************
+*/
+/* Styles généraux */
+.card {
+    /* Custom properties */
+    --card-border-radius: 1.111vw; /* Taille de l'arrondi des coins des cartes */
+    /* Properties */
+    box-shadow: 0 0.521vw 1.042vw rgba(0,0,0,0.10), 0 0.417vw 0.417vw rgba(0,0,0,0.15);
+    border-radius: var(--card-border-radius);
+}
+
+/* Styles généraux: titre */
+.card h3 {
+    font-size: var(--body-font-size);
+}
+
+/* Styles généraux: rendre la carte clicable: le pseudo élément du lien du titre couvre toute la carte */
+.card h3 a::after {
+    border-radius: var(--card-border-radius);
+}
+
+
+/* Style de cartes d'hébergement généraux */
+.card.accomodation {
+    padding: 0.347vw;
+    /* Custom properties */
+    --acc-image-border-radius: 0.833vw; /* Taille de l'arrondi des coins des images des cartes */
+}
+
+/* Styles hébergement généraux: titre */
+.card.accomodation h3 {
+    margin-bottom: 0.833vw;
+}
+
+/* Styles hébergements généraux: prix de la carte */
+.card.accomodation p {
+    flex-grow: 1;
+}
+
+/* Styles hébergements généraux: étoiles de la carte */
+.card.accomodation ol {
+    display: flex;
+    justify-content: flex-start;
+    font-size: calc(var(--body-font-size) * 0.75);  /* Variation de la taille de police de base */
+}
+
+
+/* Carte hébergement classique */
+.card.accomodation.all {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    width: 32%;
+    /* Custom properties */
+    --accall-text-margin: 0.764vw; /* Marge lattérale des éléments textuels de la carte */
+}
+
+/* Carte hébergement classique: images de la carte */
+.card.accomodation.all img {
+    height: 7.777vw;
+    border-radius: var(--acc-image-border-radius) var(--acc-image-border-radius) 0 0;
+    margin-bottom: 0.833vw;
+}
+
+/* Carte hébergement classique: titre de la carte */
+.card.accomodation.all h3 {
+    margin-left: var(--accall-text-margin);
+}
+
+/* Carte hébergement classique: prix de la carte */
+.card.accomodation.all p {
+    margin-left: var(--accall-text-margin);
+    margin-bottom: 0.833vw;
+}
+
+/* Carte hébergement classique: étoiles de la carte */
+.card.accomodation.all ol {
+    margin-bottom: 0.278vw;
+    margin-left: var(--accall-text-margin);
+}
+
+
+/* Cartes hébergement populaire */
+.card.accomodation.popular {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: flex-start;
+    height: 10vw;
+    min-height: 125px;
+    column-gap: 6%;
+    flex-grow: 1;
+}
+
+/* Carte hébergement populaire: images de la carte */
+.card.accomodation.popular img {
+    flex-shrink: 0;
+    width: 37%;
+    height: 100%;
+    border-radius: var(--acc-image-border-radius) 0 0 var(--acc-image-border-radius);
+}
+
+/* Carte hébergement populaire: titre de la carte */
+.card.accomodation.popular h3 {
+    margin-top: 1.042vw;
+    max-height: calc(var(--body-font-size) * 2.3); /* Pour éviter que le texte ne dépasse 2 lignes, la hauteur maximale sera de deux fois le line-height. Le line-height vaut 1.15 et est défini dans le normalize.css */
+    overflow: hidden;
+}
+
+/* Carte hébergement populaire: longueur de la description */
+.card.accomodation.popular p, .card.accomodation.popular h3 {
+    width: 57%;
+}
+
+/* Carte hébergement populaire: étoiles de la carte */
+.card.accomodation ol {
+    margin-bottom: 0.625vw;
+}
+
+
+/* Carte activité */
+.card.activity {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    width: 22%;
+}
+
+/* Carte activité: images */
+.card.activity img {
+    flex-grow: 1;
+    border-radius: var(--card-border-radius) var(--card-border-radius) 0 0;
+    height: 10%;
+}
+
+/* Carte activité: titre */
+.card.activity h3 {
+    margin: 1.389vw;
+}
+
+/* Carte activité: variations de hauteur */
+.activity:nth-child(3n+1) {
+    height: 100%;
+}
+.activity:nth-child(2) {
+    height: 53%;
+}
+.activity:nth-child(3) {
+    height: 37%;
+}
+.activity:nth-child(5) {
+    height: 44%;
+}
+.activity:nth-child(6) {
+    height: 47%;
+}

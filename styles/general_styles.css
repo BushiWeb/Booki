@@ -1,0 +1,277 @@
+/*
+*************************************************
+    Importation des familles de police
+*************************************************
+*/
+/* Utiliser la règle font-family: Raleway, Arial, sans-serif; */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+
+
+
+
+
+/*
+*************************************************
+    Custom properties
+*************************************************
+*/
+/* Couleurs */
+body {
+    --primary-color: #0065FC;
+    --secondary-color: #DEEBFF;
+    --light-neutral: #F2F2F2;
+    --dark-neutral: #D9D9D9;
+}
+
+
+
+
+
+/*
+*************************************************
+    Règles générales
+*************************************************
+*/
+/* Par défaut, tous les éléments utiliseront border-box, sauf ceux explicitement corrigés dans le normalize.css */
+* {
+    box-sizing: border-box;
+}
+
+
+/* Polices par défauts du document */
+body {
+    font-family: Raleway, Arial, sans-serif;
+}
+
+h2 {
+    font-weight: bold;
+    margin: 0;
+}
+
+h3 {
+    margin: 0;
+    font-weight: bold;
+
+}
+
+
+/* Changement du curseur de la souris au survol d'un bouton, pour indiquer qu'il est cliquable */
+button {
+    cursor: pointer;
+}
+
+
+/* Aucune liste ne possède de puce / numéro sur cette maquette */
+ul, ol {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+/* Tous les liens sont noirs par défauts et ne sont pas soulignés */
+a {
+    color: black;
+    text-decoration: none;
+}
+
+
+
+
+
+/*
+*************************************************
+    Header
+*************************************************
+*/
+/* Barre de navigation */
+header nav li {
+    text-align: center;
+}
+
+header nav li:hover {
+    border-color: var(--primary-color);
+}
+
+header nav li:hover a {
+    color: var(--primary-color);
+}
+
+
+
+
+
+/*
+*************************************************
+    Form
+*************************************************
+*/
+/* Description */
+form > p:first-of-type {
+    margin: 0;
+}
+
+
+/* Champ de recherche: label */
+#search label {
+    background-color: var(--light-neutral);
+    text-align: center;
+}
+
+/* Champ de recherche: champ de saisie */
+#search input {
+    min-width: 96px;
+    margin: 0;
+    font-weight: bold;
+    transition: 0.3s border;
+}
+/* Changement du style de focus de l'input pour correspondre à la charte graphique */
+#search input:focus {
+    outline: none;
+    border-bottom: var(--primary-color) 2px solid;
+}
+
+/* Champ de recherche: bouton */
+#search button {
+    background-color: var(--primary-color);
+    border: none;
+    color: white;
+    font-weight: bold;
+}
+
+/* Champ de recherche: bordure */
+#search, #search input {
+    border: var(--light-neutral) 2px solid;
+    border-left: none;
+    border-right: none;
+}
+
+
+/* Filtres: boutons */
+#filters button {
+    border: solid var(--dark-neutral);
+    border-left: none;
+    padding: 0;
+    align-items: center;
+    font-weight: bold;
+    transition: 0.3s transform;
+    width: max-content;
+    background-color: white;
+}
+/* Filtres: boutons au survol */
+#filters button:hover {
+    transform: scale(1.1);
+}
+
+/* Filtres: icône du bouton */
+#filters button .icon {
+    background-color: var(--secondary-color);
+    border: none;
+    color: var(--primary-color);
+    transition-duration: 0.3s;
+    transition-property: color, background-color;
+    border-radius: 50%;
+}
+/* Filtres: icône du bouton au survol */
+#filters button:hover .icon {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+
+/* Paragraphe d'information */
+#search-info {
+    margin: 0;
+}
+
+/* Paragraphe d'information: icône */
+#search-info .icon {
+    border: var(--light-neutral) 2px solid;
+    border-radius: 50%;
+    color: var(--primary-color);
+    text-align: center;
+}
+
+
+
+
+
+/*
+*************************************************
+    Hébergements à Marseille
+*************************************************
+*/
+/* Afficher plus */
+#accomodations .more {
+    font-weight: bold;
+}
+
+
+
+
+
+/*
+*************************************************
+    Footer
+*************************************************
+*/
+footer {
+    background-color: var(--light-neutral);
+}
+
+
+/* Catégorie de lien */
+footer div {
+    min-width: max-content;
+}
+
+
+
+
+
+/*
+*************************************************
+    Cartes
+*************************************************
+*/
+/* Styles généraux */
+.card {
+    position: relative;
+    background-color: white;
+}
+
+/* Styles généraux: titre */
+.card h3 {
+    font-weight: bold;
+    margin: 0;
+}
+
+/* Styles généraux: images */
+.card img {
+    object-fit: cover;
+    margin: 0;
+}
+
+/* Styles généraux: rendre la carte clicable: le pseudo élément du lien du titre couvre toute la carte */
+.card h3 a::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* Styles hébergements généraux: prix de la carte */
+.card.accomodation p {
+    margin: 0;
+}
+
+/* Styles hébergements généraux: étoiles de la carte */
+.card.accomodation ol li {
+    color: var(--dark-neutral);
+}
+.card.accomodation ol li .activated {
+    color: var(--primary-color);
+}

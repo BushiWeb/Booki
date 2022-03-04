@@ -1,0 +1,355 @@
+/*
+*************************************************
+    Custom properties
+*************************************************
+*/
+/* Taille des marges latérales */
+body {
+    --side-margin: 5.651vw;
+}
+
+
+
+
+
+/*
+*************************************************
+    Règles générales
+*************************************************
+*/
+/* Polices par défauts du document */
+body {
+    /* Custom properties */
+    --body-font-size: max(16px, 3.229vw); /* Taille de police par défaut. Si 3.229vw < 16px alors on garde 16px pour garder un texte suffisement grand. */
+}
+
+h2 {
+    margin-bottom: 4.844vw;
+}
+
+
+
+
+
+/*
+*************************************************
+    Header
+*************************************************
+*/
+header {
+    padding: 0;
+    margin-bottom: 7.265vw;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+
+/* Logo Booki */
+header > a {
+    margin: 4.036vw 0 4.036vw 7.064vw;
+}
+
+header > a img {
+    height: 9.082vw;
+}
+
+
+/* Barre de navigation */
+header nav {
+    width: 80%;
+}
+
+header nav li {
+    padding: 3.229vw 0;
+    flex: 0 1 40%;
+    border-top: none;
+    border-bottom: var(--light-neutral) 5px solid;
+}
+
+header nav li:hover {
+    border-bottom-width: 5px;
+}
+
+
+
+
+
+/*
+*************************************************
+    Form
+*************************************************
+*/
+form {
+    margin-bottom: 8.073vw;
+}
+
+
+/* Titre du formulaire */
+form h2 {
+    margin-bottom: 2.422vw;
+}
+
+
+/* Description */
+form > p:first-of-type {
+    margin-bottom: 4.844vw;
+}
+
+
+/* Champ de recherche */
+#search {
+    width: 68vw;
+    margin-bottom: 6.458vw;
+    border-radius: 4.844vw;
+    /* Custom properties */
+    --search-border-radius: 2.523vw; /* Border radius commun aux éléments de la barre de recherche */
+    --search-height: 9.687vw; /* Hauteur communne aux éléments de la barre de recherche */
+    --search-padding: 3.229vw; /* Rembourage commun aux éléments de la barre de recherche */
+}
+
+/* Champ de recherche: label */
+#search label {
+    width: 10.293vw;
+}
+
+/* Champ de recherche: bouton */
+#search button {
+    border-radius: var(--search-border-radius);
+    width: var(--search-height);
+    padding: 0;
+}
+
+/* Champ de recherche: contenu du bouton, échanger le texte contre l'icône */
+#search button .icon {
+    display: initial; /* Au format tablette et en dessous, on montre l'icône */
+}
+
+#search button .text {
+    display: none; /* Au format tablette et en dessous, on cache le texte */
+}
+
+
+/* Filtres */
+#filters {
+    margin-bottom: 5.650vw;
+    gap: 3.229vw 4.844vw;
+    /* Custom properties */
+    --filter-height: 10.091vw; /* Hauteur des éléments du filtre */
+}
+
+/* Filtres: liste de filtres */
+#filters ul {
+    gap: 3.229vw 2.422vw;
+}
+
+/* Filtres: boutons */
+#filters button {
+    padding: 3.229vw 3.229vw 3.229vw 0;
+    gap: 3.229vw;
+    border-width: max(2px, 0.404vw); /* La largeur de la bordure ne sera pas en dessous de 2px */
+}
+
+
+/* Paragraphe d'information */
+#search-info {
+    gap: 2.422vw;
+    /* Custom properties */
+    --search-info-height: 4.488vw; /* Taille de l'icône d'information */
+}
+
+
+
+
+
+/*
+*************************************************
+    Main
+*************************************************
+*/
+main{
+    padding: 0 var(--side-margin);
+    row-gap: 9.687vw;
+    margin-bottom: 8.88vw;
+}
+
+
+/* Taille des enfants */
+#most-popular {
+    width: 100%;
+}
+
+#accomodations {
+    width: 100%;
+}
+
+
+/* Styles communs des enfants */
+#most-popular, #accomodations {
+    border-radius: 7.265vw;
+    padding: 8.073vw 5.651vw 6.458vw;
+}
+
+
+
+
+
+/*
+*************************************************
+    Les plus populaires
+*************************************************
+*/
+/* Liste de cartes */
+#most-popular > ul {
+    row-gap: 4.844vw;
+}
+
+
+
+
+
+/*
+*************************************************
+    Hébergements à Marseille
+*************************************************
+*/
+/* Liste de cartes */
+#accomodations > ul {
+    row-gap: 5.651vw;
+    margin-bottom: 7.265vw;
+}
+
+
+
+
+
+/*
+*************************************************
+    Activités à Marseille
+*************************************************
+*/
+/* Titre */
+#activities h2 {
+    margin-bottom: 5.651vw;
+}
+
+
+/* Liste de cartes */
+#activities > ul {
+    flex-direction: row;
+    row-gap: 4.844vw;
+    height: auto;
+    aspect-ratio: unset;
+}
+
+
+
+
+
+/*
+*************************************************
+    Footer
+*************************************************
+*/
+footer {
+    padding-top: 8.88vw;
+    padding-bottom: 0.807vw;
+}
+
+
+/* Catégorie de lien */
+footer div {
+    width: 50%;
+    margin-bottom: 9.687vw;
+}
+
+/* Titre des catégories */
+footer h2 {
+    margin-bottom: 4.844vw;
+}
+
+
+
+
+
+/*
+*************************************************
+    Cartes
+*************************************************
+*/
+/* Styles généraux */
+.card {
+    /* Custom properties */
+    --card-border-radius: 3.229vw; /* Taille de l'arrondi des coins des cartes */
+    /* Propriétés */
+    box-shadow: 0 1.009vw 2.018vw rgba(0,0,0,0.10), 0 0.605vw 0.605vw rgba(0,0,0,0.15);
+}
+
+
+/* Style de cartes d'hébergement généraux */
+.card.accomodation {
+    padding: 1.009vw;
+    /* Custom properties */
+    --acc-image-border-radius: 2.422vw; /* Taille de l'arrondi des coins des images des cartes */
+}
+
+/* Styles hébergement généraux: titre */
+.card.accomodation h3 {
+    margin-bottom: 2.422vw;
+}
+
+
+/* Carte hébergement classique */
+.card.accomodation.all {
+    width: 48%;
+    /* Custom properties */
+    --accall-text-margin: 2.22vw; /* Marge lattérale des éléments textuels de la carte */
+}
+
+/* Carte hébergement classique: images de la carte */
+.card.accomodation.all img {
+    height: 22.603vw;
+    margin-bottom: 2.422vw;
+}
+
+/* Carte hébergement classique: prix de la carte */
+.card.accomodation.all p {
+    margin-bottom: 2.422vw;
+}
+
+/* Carte hébergement classique: étoiles de la carte */
+.card.accomodation.all ol {
+    margin-bottom: 0.807vw;
+}
+
+
+/* Cartes hébergement populaire */
+.card.accomodation.popular {
+    height: 29.062vw;
+}
+
+/* Carte hébergement populaire: titre de la carte */
+.card.accomodation.popular h3 {
+    margin-top: 3.027vw;
+}
+
+/* Carte hébergement populaire: étoiles de la carte */
+.card.accomodation ol {
+    margin-bottom: 1.816vw;
+}
+
+
+/* Carte activité */
+.card.activity {
+    width: 48%;
+}
+
+/* Carte activité: titre */
+.card.activity h3 {
+    margin: 4.036vw;
+}
+
+/* Carte activité: variations de hauteur */
+.card.activity {
+    height: 38.345vw;
+}
